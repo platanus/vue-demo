@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 2020_08_18_192805) do
   create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
   end
 
+  create_table "products", force: :cascade do |t|
+    t.text "image_data"
+    t.integer "price"
+    t.string "name"
+    t.text "details"
+    t.string "brand"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
