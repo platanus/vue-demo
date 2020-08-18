@@ -6,7 +6,7 @@ module.exports = {
   variants: {},
   plugins: [],
   purge: {
-    enabled: true,
+    enabled: process.env.NODE_ENV !== 'development',
     content: [
       './app/**/*.html',
       './app/**/*.vue',
