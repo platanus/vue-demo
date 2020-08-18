@@ -59,3 +59,6 @@ end
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'active_skin', github: 'SoftwareBrothers/active_skin'
+gem 'activeadmin', '~> 2.6'
+gem 'activeadmin_addons'
