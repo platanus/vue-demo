@@ -114,6 +114,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
     diff-lcs (1.4.4)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
@@ -404,6 +406,8 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   data_migrate
+  devise
+  devise-i18n
   dotenv-rails
   draper (~> 3.1)
   enumerize

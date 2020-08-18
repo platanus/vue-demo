@@ -56,3 +56,6 @@ end
 group :production, :development, :test do
   gem 'tzinfo-data'
 end
+
+gem 'devise'
+gem 'devise-i18n'
