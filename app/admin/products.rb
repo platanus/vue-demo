@@ -1,5 +1,6 @@
 ActiveAdmin.register Product do
-  permit_params :name, :details, :brand, :price, :image
+  permit_params :name, :details, :brand, :price, :image,
+                colors_attributes: [:id, :name, :_destroy]
 
   show do
     attributes_table do
@@ -9,6 +10,9 @@ ActiveAdmin.register Product do
       row :price
       row :image do
         img src: resource.image_url
+      end
+      list_row :colors do |mod|
+        mod.colors.pluck(:name)
       end
     end
   end
@@ -20,6 +24,11 @@ ActiveAdmin.register Product do
       f.input :brand
       f.input :price
       f.input :image, as: :file
+    end
+    f.inputs do
+      f.has_many :colors, new_record: 'Nuevo Color', allow_destroy: true do |color|
+        color.input :name
+      end
     end
     f.actions
   end

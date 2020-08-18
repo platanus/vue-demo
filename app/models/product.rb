@@ -1,5 +1,13 @@
 class Product < ApplicationRecord
   include ImageUploader::Attachment(:image)
+
+  has_many :colors, dependent: :destroy
+
+  accepts_nested_attributes_for :colors, allow_destroy: true
+
+  def color_names
+    colors.pluck(:name)
+  end
 end
 
 # == Schema Information
