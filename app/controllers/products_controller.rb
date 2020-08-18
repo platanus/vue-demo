@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = ActiveModel::Serializer::CollectionSerializer.new(
+      Product.all,
+      each_serializer: ::ProductSerializer
+    ).as_json
   end
 end
