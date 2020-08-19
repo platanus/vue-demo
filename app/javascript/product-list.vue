@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="my-4 text-center">
+      Total: ${{ selectedTotalPrice }}
+    </div>
     <div class="grid grid-cols-3 gap-4">
       <div
         v-for="product in normalizedProducts"
@@ -32,6 +35,18 @@ export default {
     return {
       normalizedProducts: productsHash,
     };
+  },
+  computed: {
+    selectedTotalPrice() {
+      let total = 0;
+      Object.values(this.normalizedProducts).forEach((product) => {
+        if (product.selected) {
+          total += product.price;
+        }
+      });
+
+      return total;
+    },
   },
   methods: {
     toggleSelect(product) {
