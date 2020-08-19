@@ -5,6 +5,7 @@
         class="absolute top-0 right-0 w-6 h-6 m-2 bg-white rounded-full focus:outline-none"
         :class="{ 'bg-green-500': product.selected }"
         @click="toggleSelected"
+        id="select-btn"
       />
       <img
         :src="product.image_url"
