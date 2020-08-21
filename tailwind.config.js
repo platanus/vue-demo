@@ -3,7 +3,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    outline: ['focus'],
+  },
   plugins: [],
   purge: {
     enabled: process.env.NODE_ENV !== 'development',
@@ -13,5 +15,5 @@ module.exports = {
       './app/**/*.js',
       './app/**/*.erb',
     ],
-  }
+  },
 };
